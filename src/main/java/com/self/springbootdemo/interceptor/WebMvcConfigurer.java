@@ -1,14 +1,8 @@
 package com.self.springbootdemo.interceptor;
 
-import cn.hutool.core.util.CharsetUtil;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.*;
-
-import java.nio.charset.Charset;
-import java.util.List;
 
 /**
  * 拦截配置
@@ -31,15 +25,6 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
                 .maxAge(3600);
 
         super.addCorsMappings(registry);
-    }
-
-    /**
-     * 响应编码处理
-     * @param converters converters
-     */
-    @Override
-    protected void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(new StringHttpMessageConverter(Charset.forName(CharsetUtil.UTF_8)));
     }
 
     /**
