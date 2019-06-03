@@ -1,7 +1,6 @@
 package com.self.springbootdemo.interceptor;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.*;
 
 /**
@@ -34,18 +33,6 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-    }
-
-    /**
-     * 设置首页
-     * @param registry registry
-     */
-    @Override
-    protected void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index");
-        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-
-        super.addViewControllers(registry);
     }
 
     /**

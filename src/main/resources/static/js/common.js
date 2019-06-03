@@ -18,15 +18,6 @@ commonClass.prototype = {
      */
     test:function (data) {
         return data;
-    },
-
-    /**
-     * 加载页面
-     * @param url 请求视图url
-     */
-    loadPage:function (url) {
-        url = this.contextPath + url;
-        $("html").load(url);
     }
 
 }
