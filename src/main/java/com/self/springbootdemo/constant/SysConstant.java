@@ -32,6 +32,11 @@ public final class SysConstant {
     public static final String SYS_LANGUAGE_PACKAGE = "languages";
 
     /**
+     * 系统配置文件名
+     */
+    public static final String SYS_CFG_NAME = "springbootdemo.properties";
+
+    /**
      * 系统properties文件后缀
      */
     public static final String SYS_SUFFIX = "properties";
@@ -45,5 +50,10 @@ public final class SysConstant {
      * 斜杠
      */
     public static final String SYS_SLASH = "/";
+
+    /**
+     * 下划线
+     */
+    public static final String SYS_UNDERLINE = "_";
 
 }

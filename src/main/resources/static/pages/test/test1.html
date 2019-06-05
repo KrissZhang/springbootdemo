@@ -24,5 +24,12 @@
             <tr align="center"><td id="td1"></td><td id="td2"></td><td id="td3"></td></tr>
         </table>
     </div>
+    <br />
+    <!-- 上传文件 -->
+    <form action="/springbootdemo/file/upload" method="post" enctype="multipart/form-data">
+        <!-- 这里属性name和后端参数名必须保持一致 -->
+        <p>选择文件: <input type="file" name="file"/></p>
+        <p><input type="submit" value="上传"/></p>
+    </form>
 </body>
 </html>
