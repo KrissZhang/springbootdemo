@@ -25,7 +25,7 @@ public class SpringbootdemoApplication extends SpringBootServletInitializer impl
     /**
      * 打包项目
      * @param builder builder
-     * @return 打包结果
+     * @return 打包项目
      */
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {

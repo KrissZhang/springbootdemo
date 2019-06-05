@@ -108,6 +108,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <!-- 项目入口 -->
                     <mainClass>com.self.springbootdemo.SpringbootdemoApplication</mainClass>
                 </configuration>
             </plugin>
