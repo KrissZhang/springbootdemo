@@ -8,6 +8,7 @@ import com.self.springbootdemo.service.TestInfoService;
 import com.self.springbootdemo.util.NumberUtil;
 import com.self.springbootdemo.util.RpcClientResult;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -26,6 +27,7 @@ public class TestInfoServiceImpl implements TestInfoService {
      * @param integer 主键id
      * @return 删除数量
      */
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public RpcClientResult deleteByPrimaryKey(Integer integer) {
         if(NumberUtil.isNaturalNumber(integer)){
