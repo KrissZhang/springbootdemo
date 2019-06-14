@@ -1,13 +1,14 @@
 package com.self.springbootdemo.controller.file;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
+import com.self.springbootdemo.service.FileDownloadService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
 
 /**
  * 文件下载
@@ -22,6 +23,9 @@ public class FileDownloadController {
      */
     private static final Logger logger = LoggerFactory.getLogger(FileDownloadController.class);
 
+    @Autowired
+    private FileDownloadService service;
+
     /**
      * 文件下载
      * @param response response
@@ -30,15 +34,8 @@ public class FileDownloadController {
      * @throws Exception 异常
      */
     @RequestMapping("/download")
-    public void download(HttpServletResponse response, String filePath, String fileName) throws Exception {
-        try(InputStream is = new FileInputStream(new File(filePath, fileName)); OutputStream os = response.getOutputStream()){
-            response.setContentType("application/x-download");
-            response.addHeader("Content-Disposition","attachment;filename=" + fileName);
-
-            //下载文件
-            IOUtils.copy(is, os);
-            os.flush();
-        }
+    public void download(HttpServletResponse response, @RequestParam String filePath, @RequestParam String fileName) throws Exception {
+        service.download(response, filePath, fileName);
     }
 
 }
