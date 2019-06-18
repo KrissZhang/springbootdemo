@@ -31,6 +31,7 @@
         <druid.version>1.1.9</druid.version>
         <mybatis.version>2.0.0</mybatis.version>
         <pagehelper.version>1.2.5</pagehelper.version>
+        <shiro.version>1.4.0</shiro.version>
     </properties>
 
     <dependencies>
@@ -92,6 +93,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!-- shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
         </dependency>
 
         <!-- Test -->
