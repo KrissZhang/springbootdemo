@@ -11,10 +11,10 @@ import java.util.List;
 public interface UserMapper extends BaseMapper<User, Integer> {
 
     /**
-     * 通过用户名查询用户列表
-     * @param username 用户名
+     * 通过用户属性查询用户列表
+     * @param user 用户对象
      * @return 用户列表
      */
-    List<User> selectByUserName(String username);
+    List<User> selectByColumn(User user);
 
 }

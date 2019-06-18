@@ -68,13 +68,4 @@
       permission = #{permission,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByRoleIds" resultType="java.util.Map">
-    select p.* from permission p
-                    inner join role_permission rp on p.id = rp.pid
-                    where rp.rid in
-                    <foreach collection="rids" item="id" index="index"
-                             open="(" close=")" separator=",">
-                      #{id,jdbcType=INTEGER}
-                    </foreach>
-  </select>
 </mapper>

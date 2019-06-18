@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 角色Service
@@ -117,26 +116,6 @@ public class RoleServiceImpl implements RoleService {
         }
 
         return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
-    }
-
-    /**
-     * 通过用户id查询用户角色列表
-     * @param uid 用户id
-     * @return 角色列表
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public RpcClientResult<List<Role>> selectByUid(Integer uid) {
-        List<Role> list = mapper.selectByUid(uid);
-
-        if(list != null && list.size() > 0){
-            RpcClientResult result = RpcClientResult.getSuccess();
-            result.setData(list);
-
-            return result;
-        }else{
-            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
-        }
     }
 
 }

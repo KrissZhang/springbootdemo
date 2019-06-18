@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -121,18 +120,21 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 通过用户属性查询唯一用户
-     * @param username 用户名
+     * 通过用户名查询唯一用户
+     * @param userName 用户名
      * @return 唯一用户
      */
     @SuppressWarnings("unchecked")
     @Override
-    public RpcClientResult<User> selectByUserName(String username){
-        if(username == null){
+    public RpcClientResult<User> selectByUserName(String userName){
+        if(userName == null){
             return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
         }
 
-        List<User> list = mapper.selectByUserName(username);
+        User user = new User();
+        user.setUsername(userName);
+
+        List<User> list = mapper.selectByColumn(user);
 
         if(list != null && list.size() > 0){
             RpcClientResult result = RpcClientResult.getSuccess();

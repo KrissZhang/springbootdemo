@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 权限Service
@@ -118,22 +116,6 @@ public class PermissionServiceImpl implements PermissionService {
         }
 
         return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
-    }
-
-    /**
-     * 根据角色id查询权限
-     * @param rids 角色id列表
-     * @return 权限列表
-     */
-    @Override
-    public List<Permission> selectByRoleIds(List<Integer> rids) {
-        List<Permission> list = mapper.selectByRoleIds(rids);
-
-        if(list != null && list.size() > 0){
-            return list;
-        }else{
-            return new ArrayList<>();
-        }
     }
 
 }

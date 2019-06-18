@@ -68,9 +68,4 @@
       roledesc = #{roledesc,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByUid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select r.* from role r
-                    inner join user_role ur on r.id = ur.rid
-					where ur.uid = #{uid,jdbcType=INTEGER}
-  </select>
 </mapper>
