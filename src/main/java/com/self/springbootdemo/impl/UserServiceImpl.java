@@ -7,11 +7,13 @@ import com.self.springbootdemo.entity.po.User;
 import com.self.springbootdemo.service.UserService;
 import com.self.springbootdemo.util.NumberUtil;
 import com.self.springbootdemo.util.RpcClientResult;
+import com.self.springbootdemo.util.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户Service
@@ -143,6 +145,29 @@ public class UserServiceImpl implements UserService {
             return result;
         }else{
             return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
+        }
+    }
+
+    /**
+     * 根据用户名查询角色和权限列表
+     * @param userName 用户名
+     * @return 角色和权限列表
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public RpcClientResult<List<Map<String, Object>>> selectRoleAndPermissionByUserName(String userName) {
+        if(StringUtils.isBlank(userName)){
+            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
+        }else{
+            List<Map<String, Object>> list = mapper.selectRoleAndPermissionByUserName(userName);
+            if(list != null){
+                RpcClientResult result = RpcClientResult.getSuccess();
+                result.setData(list);
+
+                return result;
+            }else{
+                return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
+            }
         }
     }
 

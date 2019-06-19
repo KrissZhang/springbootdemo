@@ -3,6 +3,7 @@ package com.self.springbootdemo.dao.mapper;
 import com.self.springbootdemo.entity.po.User;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户Mapper
@@ -16,5 +17,12 @@ public interface UserMapper extends BaseMapper<User, Integer> {
      * @return 用户列表
      */
     List<User> selectByColumn(User user);
+
+    /**
+     * 根据用户名查询角色和权限列表
+     * @param userName 用户名
+     * @return 角色和权限列表
+     */
+    List<Map<String, Object>> selectRoleAndPermissionByUserName(String userName);
 
 }

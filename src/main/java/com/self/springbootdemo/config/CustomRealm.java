@@ -3,6 +3,7 @@ package com.self.springbootdemo.config;
 import com.self.springbootdemo.entity.po.User;
 import com.self.springbootdemo.service.UserService;
 import com.self.springbootdemo.util.Md5;
+import com.self.springbootdemo.util.RpcClientResult;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -12,6 +13,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -36,8 +39,14 @@ public class CustomRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Set<String> permissionSet = new HashSet<>();
 
-        //获取用户权限--TODO
-        permissionSet.add("admin:see");
+        //获取用户权限
+        RpcClientResult<List<Map<String, Object>>> result = service.selectRoleAndPermissionByUserName(userName);
+        if(result.isSuccess()){
+            List<Map<String, Object>> list = result.getData();
+            for (Map<String, Object> map : list) {
+                permissionSet.add(map.get("rolename").toString() + ":" + map.get("permission").toString());
+            }
+        }
 
         info.setStringPermissions(permissionSet);
 
