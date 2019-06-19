@@ -37,13 +37,7 @@ public class ShiroConfig {
         //配置权限(anon:url可以匿名访问,authc:url必须认证后才能访问)
 
         //静态资源不会被拦截
-        filterChainDefinitionMap.put("/assets/**", "anon");
-        filterChainDefinitionMap.put("/css/**", "anon");
-        filterChainDefinitionMap.put("/font/**", "anon");
-        filterChainDefinitionMap.put("/images/**", "anon");
-        filterChainDefinitionMap.put("/js/**", "anon");
-        filterChainDefinitionMap.put("/products/**", "anon");
-        filterChainDefinitionMap.put("/widget/**", "anon");
+        filterChainDefinitionMap.put("/static/**", "anon");
 
         //配置退出
         filterChainDefinitionMap.put("/logout", "logout");
