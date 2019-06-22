@@ -125,11 +125,6 @@ public final class Constant {
          */
         public static final String STR_EMPTY = "";
 
-        /**
-         * MD5
-         */
-        public static final String STR_MD5 = "MD5";
-
     }
 
 }
