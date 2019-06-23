@@ -44,6 +44,9 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
         //按照拦截器的声明顺序执行(表达式指向请求方法的url，* 和 ** 代表全部)
         registry.addInterceptor(new CustomInterceptor()).addPathPatterns("/**");
 
+        //拦截请求前台接口的未登录用户
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/front/**");
+
         super.addInterceptors(registry);
     }
 

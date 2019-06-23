@@ -56,4 +56,14 @@ public final class SysConstant {
      */
     public static final String SYS_UNDERLINE = "_";
 
+    /**
+     * 登录重定向url
+     */
+    public static final String SYS_LOGIN_REDIRECT_URL = "/springbootdemo/login/toLoginPage";
+
+    /**
+     * 登录页url
+     */
+    public static final String SYS_LOGIN_PAGE_URL = "/springbootdemo/pages/common/login.html";
+
 }
