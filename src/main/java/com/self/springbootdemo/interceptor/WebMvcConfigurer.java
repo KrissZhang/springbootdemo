@@ -45,7 +45,7 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
         registry.addInterceptor(new CustomInterceptor()).addPathPatterns("/**");
 
         //拦截请求前台接口的未登录用户
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/front/**");
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/front/**", "/file/**");
 
         super.addInterceptors(registry);
     }
