@@ -55,7 +55,7 @@ public class LoginController {
      * @param pwd 密码
      * @return 登录结果
      */
-    @RequestMapping(value = "/login", method= RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public RpcClientResult login(HttpServletRequest request, HttpServletResponse response, @RequestParam String uname, @RequestParam String pwd){
         //校验用户名是否为空
         if(StringUtils.isBlank(uname)){
@@ -102,6 +102,26 @@ public class LoginController {
         }else{
             return RpcClientResult.getFail(RespCodeMsg.FAIL);
         }
+    }
+
+    /**
+     * 退出登录
+     * @param request 请求
+     * @param response 响应
+     * @return 退出登录结果
+     */
+    @RequestMapping(value = "/logout", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public RpcClientResult logout(HttpServletRequest request, HttpServletResponse response){
+        //删除用户登录会话信息
+        HttpSession session = request.getSession();
+        session.removeAttribute("uid");
+        session.removeAttribute("uname");
+        session.removeAttribute("pwd");
+
+        //删除Redis缓存中用户登录信息
+        long delNum = redisUtil.hdel("loginUser" , "uid", "uname", "pwd");
+
+        return delNum>0?RpcClientResult.getSuccess():RpcClientResult.getFail(RespCodeMsg.FAIL);
     }
 
 }

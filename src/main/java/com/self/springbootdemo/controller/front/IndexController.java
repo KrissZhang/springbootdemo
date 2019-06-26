@@ -18,7 +18,7 @@ public class IndexController {
      * 测试前台请求
      * @return 请求结果
      */
-    @RequestMapping(value = "/testIndex", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/testIndex", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public RpcClientResult testIndex(){
         return RpcClientResult.getSuccess();
     }

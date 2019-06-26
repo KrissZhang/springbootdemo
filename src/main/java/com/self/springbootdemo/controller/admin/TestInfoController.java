@@ -26,7 +26,8 @@ public class TestInfoController {
      * @param id 主键id
      * @return TestInfo
      */
-    @RequestMapping(value = "/queryTestInfo", method= RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
+    @SuppressWarnings("unchecked")
+    @RequestMapping(value = "/queryTestInfo", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public RpcClientResult<TestInfo> queryTestInfo(@RequestParam Integer id){
         return service.selectByPrimaryKey(id);
     }

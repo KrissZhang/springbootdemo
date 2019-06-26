@@ -272,9 +272,10 @@ public final class RedisUtil {
      * 删除hash中的项
      * @param key 键,不能为null
      * @param item 项,可以是多个,不能为null
+     * @return 成功删除项的数量
      */
-    public void hdel(String key, Object... item){
-        redisTemplate.opsForHash().delete(key, item);
+    public long hdel(String key, Object... item){
+        return redisTemplate.opsForHash().delete(key, item);
     }
 
     /**
