@@ -82,10 +82,10 @@ public class LoginController {
         }
 
         //Md5加密密码
-        String pwdMd5 = Md5.encodeByMD5(pwd);
+        String pwdMd5 = Md5.encodeByMD5(pwd.trim());
 
         //从数据库中获取对应用户信息
-        User user = service.findUserByUName(uname);
+        User user = service.findUserByUName(uname.trim());
 
         //校验用户名和密码是否匹配
         if(!pwdMd5.equals(user.getPwd())){
