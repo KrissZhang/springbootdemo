@@ -26,7 +26,7 @@ public class FileDownloadServiceImpl implements FileDownloadService {
      */
     @Override
     public void download(HttpServletResponse response, String filePath, String fileName) throws Exception {
-        try(InputStream is = new FileInputStream(new File(filePath, fileName)); OutputStream os = response.getOutputStream()){
+        try(InputStream is = new FileInputStream(new File(filePath.trim(), fileName.trim())); OutputStream os = response.getOutputStream()){
             response.setContentType("application/x-download");
             response.addHeader("Content-Disposition","attachment;filename=" + fileName);
 

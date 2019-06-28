@@ -32,9 +32,9 @@ public final class SysConstant {
     public static final String SYS_LANGUAGE_PACKAGE = "languages";
 
     /**
-     * 系统配置文件名
+     * 系统路径名
      */
-    public static final String SYS_CFG_NAME = "springbootdemo.properties";
+    public static final String SYS_PATH_NAME = "springbootdemo";
 
     /**
      * 系统properties文件后缀
@@ -55,5 +55,20 @@ public final class SysConstant {
      * 下划线
      */
     public static final String SYS_UNDERLINE = "_";
+
+    /**
+     * 系统配置文件名
+     */
+    public static final String SYS_CFG_NAME = SYS_PATH_NAME + SYS_DOT + SYS_SUFFIX;
+
+    /**
+     * 登录重定向url
+     */
+    public static final String SYS_LOGIN_REDIRECT_URL = SYS_SLASH + SYS_PATH_NAME + "/login/toLoginPage";
+
+    /**
+     * 登录页url
+     */
+    public static final String SYS_LOGIN_PAGE_URL = SYS_SLASH + SYS_PATH_NAME + "/pages/common/login.html";
 
 }

@@ -1,23 +1,30 @@
 package com.self.springbootdemo.entity.po;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 测试表po
  * @author zp
  */
+@ApiModel(value = "测试表po", description = "测试表po")
 public class TestInfo {
     /**
      * id
      */
+    @ApiModelProperty(value = "测试表主键id")
     private Integer id;
 
     /**
      * 名称
      */
+    @ApiModelProperty(value = "名称")
     private String name;
 
     /**
      * 值
      */
+    @ApiModelProperty(value = "值")
     private String value;
 
     public Integer getId() {

@@ -32,6 +32,10 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
      */
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //拦截swagger
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+
+        //拦截其他资源
         registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
     }
 
@@ -43,6 +47,9 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
     protected void addInterceptors(InterceptorRegistry registry) {
         //按照拦截器的声明顺序执行(表达式指向请求方法的url，* 和 ** 代表全部)
         registry.addInterceptor(new CustomInterceptor()).addPathPatterns("/**");
+
+        //拦截请求前台接口的未登录用户
+        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/front/**", "/file/**");
 
         super.addInterceptors(registry);
     }

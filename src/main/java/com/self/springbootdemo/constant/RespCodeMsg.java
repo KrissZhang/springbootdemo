@@ -19,6 +19,16 @@ public interface RespCodeMsg {
     /**
      * 参数错误
      */
-    RespCode PARAM_ERROR = RespCode.build("10001");
+    RespCode PARAM_ERROR = RespCode.build("1002");
+
+    /**
+     * 用户名或密码错误
+     */
+    RespCode USER_OR_PWD_ERROR = RespCode.build("2001");
+
+    /**
+     * 登录成功
+     */
+    RespCode LOGIN_SUCCESS = RespCode.build("2002");
 
 }
