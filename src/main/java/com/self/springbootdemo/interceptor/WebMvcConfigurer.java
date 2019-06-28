@@ -35,6 +35,7 @@ public class WebMvcConfigurer extends WebMvcConfigurationSupport {
         //拦截swagger
         registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
 
+        //拦截其他资源
         registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
     }
 
