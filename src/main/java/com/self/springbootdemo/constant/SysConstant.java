@@ -9,7 +9,7 @@ public final class SysConstant {
     /**
      * 系统当前版本
      */
-    public static final String SYS_VERSION = "1.0";
+    public static final String SYS_VERSION = "1.0.0";
 
     /**
      * 系统默认编码
@@ -40,6 +40,21 @@ public final class SysConstant {
      * 系统properties文件后缀
      */
     public static final String SYS_SUFFIX = "properties";
+
+    /**
+     * 系统作者
+     */
+    public static final String SYS_AUTHOR = "zp";
+
+    /**
+     * 系统作者github
+     */
+    public static final String SYS_AUTHOR_GITHUB = "https://github.com/KrissZhang";
+
+    /**
+     * 系统作者邮箱
+     */
+    public static final String SYS_AUTHOR_EMAIL = "273629304@qq.com";
 
     /**
      * 点
