@@ -1,5 +1,6 @@
 package com.self.springbootdemo.controller.front;
 
+import cn.hutool.setting.dialect.Props;
 import com.self.springbootdemo.constant.RespCodeMsg;
 import com.self.springbootdemo.constant.SysConstant;
 import com.self.springbootdemo.entity.po.User;
@@ -103,7 +104,9 @@ public class LoginController {
         loginUserMap.put("uid", user.getId().toString());
         loginUserMap.put("uname", user.getUname());
         loginUserMap.put("pwd", user.getPwd());
-        boolean loginUserSetStatus = redisUtil.hmset("loginUser", loginUserMap,30 * 60);
+        String sessionTimeout = new Props(SysConstant.SYS_CFG_NAME).get("session.timeout")==null?"30":new Props(SysConstant.SYS_CFG_NAME).get("session.timeout").toString();
+
+        boolean loginUserSetStatus = redisUtil.hmset("loginUser", loginUserMap,Integer.valueOf(sessionTimeout) * 60);
 
         //返回登录结果
         if(loginUserSetStatus){
