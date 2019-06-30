@@ -1,5 +1,8 @@
 package com.self.springbootdemo;
 
+import cn.hutool.setting.dialect.Props;
+import com.self.springbootdemo.constant.SysConstant;
+import com.self.springbootdemo.i18n.I18nUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -39,6 +42,7 @@ public class SpringbootdemoApplication extends SpringBootServletInitializer impl
      */
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        I18nUtil.setLanguage(new Props(SysConstant.SYS_CFG_NAME).get("language").toString());
         System.out.println("启动成功");
     }
 
