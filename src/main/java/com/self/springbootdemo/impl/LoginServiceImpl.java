@@ -92,12 +92,7 @@ public class LoginServiceImpl implements LoginService {
 
         //返回登录结果
         if(loginUserSetStatus){
-            RpcClientResult result = new RpcClientResult();
-            result.setSuccess(true);
-            result.setCode(RespCodeMsg.LOGIN_SUCCESS.getCode());
-            result.setMsg(RespCodeMsg.LOGIN_SUCCESS.getMsg());
-
-            return result;
+            return RpcClientResult.getSuccess(RespCodeMsg.LOGIN_SUCCESS);
         }else{
             return RpcClientResult.getFail(RespCodeMsg.FAIL);
         }

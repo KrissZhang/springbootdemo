@@ -65,11 +65,7 @@ public class MailUtil {
             //发送邮件
             javaMailSender.send(mailMessage);
 
-            RpcClientResult result = new RpcClientResult();
-            result.setSuccess(true);
-            result.setCode(RespCodeMsg.EMAIL_SEND_SUCCESS.getCode());
-            result.setMsg(RespCodeMsg.EMAIL_SEND_SUCCESS.getMsg());
-            return result;
+            return RpcClientResult.getSuccess(RespCodeMsg.EMAIL_SEND_SUCCESS);
         }catch (Exception e){
             logger.error(e.getMessage());
             return RpcClientResult.getFail(RespCodeMsg.EMAIL_SEND_FAIL);

@@ -63,6 +63,10 @@ public class RpcClientResult<T> {
         return new RpcClientResult(true, RespCodeMsg.SUCCESS);
     }
 
+    public static RpcClientResult getSuccess(RespCode respCode){
+        return new RpcClientResult(true, respCode);
+    }
+
     public static RpcClientResult getFail(){
         return new RpcClientResult(false, RespCodeMsg.FAIL);
     }
