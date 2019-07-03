@@ -1,8 +1,9 @@
 package com.self.springbootdemo.impl;
 
 import com.self.springbootdemo.service.EmailService;
+import com.self.springbootdemo.thread.ThreadPool;
 import com.self.springbootdemo.util.MailUtil;
-import com.self.springbootdemo.util.RpcClientResult;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,16 +13,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailServiceImpl implements EmailService {
 
+    @Autowired
+    private ThreadPool threadPool;
+
     /**
      * 发送简单邮件
      * @param title 邮件标题
      * @param content 邮件内容
      * @param receiver 邮件接收人
-     * @return 发送结果
      */
     @Override
-    public RpcClientResult sendSimpleEmail(String title, String content, String receiver) {
-        return MailUtil.sendSimpleEmail(title, content, receiver);
+    public void sendSimpleEmail(String title, String content, String receiver) {
+        threadPool.taskExecutor().execute(()->{
+            MailUtil.sendSimpleEmail(title, content, receiver);
+        });
     }
 
 }
