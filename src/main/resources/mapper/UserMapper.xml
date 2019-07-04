@@ -179,19 +179,4 @@
       pwd = #{pwd,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectByColumn" parameterType="com.self.springbootdemo.entity.po.User" resultType="com.self.springbootdemo.entity.po.User">
-    select
-    <include refid="Base_Column_List" />
-    from user
-    where 1=1
-    <if test="id != null">
-      and id = #{id,jdbcType=INTEGER}
-    </if>
-    <if test="uname != null">
-      and uname = #{uname,jdbcType=VARCHAR}
-    </if>
-    <if test="pwd != null">
-      and pwd = #{pwd,jdbcType=VARCHAR}
-    </if>
-  </select>
 </mapper>

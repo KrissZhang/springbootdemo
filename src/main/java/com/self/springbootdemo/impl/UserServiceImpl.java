@@ -196,9 +196,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User findUserByUName(String uname) {
-        User user = new User();
-        user.setUname(uname);
-        List<User> list = mapper.selectByColumn(user);
+        UserExample example = new UserExample();
+        example.createCriteria().andUnameEqualTo(uname);
+        List<User> list = mapper.selectByExample(example);
         if(list != null && list.size() > 0){
             return list.get(0);
         }else{
