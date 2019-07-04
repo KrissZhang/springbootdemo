@@ -31,6 +31,7 @@
         <druid.version>1.1.9</druid.version>
         <mybatis.version>2.0.0</mybatis.version>
         <pagehelper.version>1.2.5</pagehelper.version>
+        <aliyun.version>4.0.3</aliyun.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger-models.version>1.5.21</swagger-models.version>
     </properties>
@@ -100,6 +101,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
+        <!-- aliyun -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>${aliyun.version}</version>
         </dependency>
 
         <!-- swagger -->
