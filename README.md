@@ -1,6 +1,7 @@
 # SpringBoot2.x + Mybatis + MySql + Redis + Aliyun + Hutool + Swagger2 + Slf4j
 
-已集成功能列表：
+
+# 已集成功能列表：
 
 1.SpringBoot + Mybatis 增删改查  
 2.Redis 热点数据缓存  
@@ -18,7 +19,8 @@
 14.Xml处理  
 15.日志  
   
-备注：
+  
+# 备注：
 
 (1)自制自用SpringBoot后台  
-(2)保证代码可读性，不使用Lombok
+(2)保证代码可读性，未使用Lombok
