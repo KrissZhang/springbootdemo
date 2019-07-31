@@ -32,6 +32,11 @@ public final class SysConstant {
     public static final String SYS_LANGUAGE_PACKAGE = "languages";
 
     /**
+     * 系统GeoLite包文件夹名称
+     */
+    public static final String SYS_GEOLITE_PACKAGE = "geolite";
+
+    /**
      * 系统路径名
      */
     public static final String SYS_PATH_NAME = "springbootdemo";
@@ -40,6 +45,11 @@ public final class SysConstant {
      * 系统properties文件后缀
      */
     public static final String SYS_SUFFIX = "properties";
+
+    /**
+     * 系统mmdb文件后缀
+     */
+    public static final String SYS_MMDB = "mmdb";
 
     /**
      * 系统作者
@@ -70,6 +80,16 @@ public final class SysConstant {
      * 下划线
      */
     public static final String SYS_UNDERLINE = "_";
+
+    /**
+     * GeoLite国家
+     */
+    public static final String SYS_GEOLITE_COUNTRY = "GeoLite2-Country";
+
+    /**
+     * GeoLite城市
+     */
+    public static final String SYS_GEOLITE_CITY = "GeoLite2-City";
 
     /**
      * 系统配置文件名
