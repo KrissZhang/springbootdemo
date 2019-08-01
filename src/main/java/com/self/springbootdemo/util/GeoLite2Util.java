@@ -4,7 +4,6 @@ import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.model.CountryResponse;
-import com.maxmind.geoip2.record.City;
 import com.maxmind.geoip2.record.Country;
 import com.self.springbootdemo.constant.RespCodeMsg;
 import com.self.springbootdemo.constant.SysConstant;
@@ -48,8 +47,10 @@ public class GeoLite2Util {
      */
     private static DatabaseReader geoLiteCityReader;
 
-    //初始化
-    static {
+    /**
+     * 初始化加载Reader
+     */
+    public static void geoLite2Init(){
         try {
             //国家
             geoLiteCountryPath = CommonsUtil.getProjectRootPath() + SysConstant.SYS_GEOLITE_PACKAGE + SysConstant.SYS_SLASH + SysConstant.SYS_GEOLITE_COUNTRY + SysConstant.SYS_DOT + SysConstant.SYS_MMDB;
