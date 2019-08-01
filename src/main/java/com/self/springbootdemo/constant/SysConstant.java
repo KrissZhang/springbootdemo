@@ -52,6 +52,16 @@ public final class SysConstant {
     public static final String SYS_MMDB = "mmdb";
 
     /**
+     * 未知ip
+     */
+    public static final String SYS_IP_UNKNOWN = "unKnown";
+
+    /**
+     * 本机ip
+     */
+    public static final String SYS_IP_LOCAL = "127.0.0.1";
+
+    /**
      * 系统作者
      */
     public static final String SYS_AUTHOR = "zp";
@@ -70,6 +80,11 @@ public final class SysConstant {
      * 点
      */
     public static final String SYS_DOT = ".";
+
+    /**
+     * 逗号
+     */
+    public static final String SYS_COMMA = ",";
 
     /**
      * 斜杠
