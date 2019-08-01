@@ -1,4 +1,4 @@
-# SpringBoot2.x + Mybatis + MySql + Redis + Aliyun + Hutool + Swagger2 + Slf4j
+# SpringBoot2.x + Mybatis + MySql + Redis + Aliyun + Geolite2 + Hutool + Swagger2 + Slf4j
 
 
 # 已集成功能列表：
@@ -10,14 +10,15 @@
 5. 用户登录、退出、匿名用户拦截  
 6. 中、英文国际化  
 7. 邮件发送  
-8. 阿里短信通知  
-9. 定时任务  
-10. 线程池  
-11. Excel处理  
-12. Http操作  
-13. 二维码处理  
-14. Xml处理  
-15. 日志  
+8. 阿里短信通知
+9. ip定位
+10. 定时任务  
+11. 线程池  
+12. Excel处理  
+13. Http操作  
+14. 二维码处理  
+15. Xml处理  
+16. 日志  
   
   
 # 备注：
