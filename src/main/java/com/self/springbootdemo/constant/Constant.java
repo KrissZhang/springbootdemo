@@ -104,6 +104,11 @@ public final class Constant {
         public static final Integer TWELVE = 12;
 
         /**
+         * 整数15
+         */
+        public static final Integer FIFTEEN = 15;
+
+        /**
          * 整数29
          */
         public static final Integer TWENTY_NINE = 29;

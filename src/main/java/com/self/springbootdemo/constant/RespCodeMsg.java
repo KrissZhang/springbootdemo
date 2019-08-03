@@ -31,4 +31,14 @@ public interface RespCodeMsg {
      */
     RespCode LOGIN_SUCCESS = RespCode.build("2002");
 
+    /**
+     * 邮件发送成功
+     */
+    RespCode EMAIL_SEND_SUCCESS = RespCode.build("3001");
+
+    /**
+     * 邮件发送失败
+     */
+    RespCode EMAIL_SEND_FAIL = RespCode.build("3002");
+
 }

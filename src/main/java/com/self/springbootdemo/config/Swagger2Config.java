@@ -1,5 +1,6 @@
 package com.self.springbootdemo.config;
 
+import com.self.springbootdemo.constant.SysConstant;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -40,8 +41,8 @@ public class Swagger2Config {
     public ApiInfo apiInfo(){
         return new ApiInfoBuilder()
                 .title("springbootdemo 接口文档")
-                .contact(new Contact("zp", "https://github.com/KrissZhang", "273629304@qq.com"))
-                .version("1.0.0")
+                .contact(new Contact(SysConstant.SYS_AUTHOR, SysConstant.SYS_AUTHOR_GITHUB, SysConstant.SYS_AUTHOR_EMAIL))
+                .version(SysConstant.SYS_VERSION)
                 .description("springbootdemo 接口文档")
                 .build();
     }
