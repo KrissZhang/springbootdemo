@@ -1,7 +1,7 @@
 package com.self.springbootdemo.impl;
 
 import com.self.springbootdemo.constant.RespCodeMsg;
-import com.self.springbootdemo.entity.po.MgTestInfo;
+import com.self.springbootdemo.entity.mgo.MgTestInfo;
 import com.self.springbootdemo.service.MgTestInfoService;
 import com.self.springbootdemo.util.NumberUtil;
 import com.self.springbootdemo.util.RpcClientResult;

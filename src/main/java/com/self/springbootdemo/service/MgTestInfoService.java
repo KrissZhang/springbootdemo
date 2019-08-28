@@ -1,6 +1,6 @@
 package com.self.springbootdemo.service;
 
-import com.self.springbootdemo.entity.po.MgTestInfo;
+import com.self.springbootdemo.entity.mgo.MgTestInfo;
 import com.self.springbootdemo.util.RpcClientResult;
 
 /**

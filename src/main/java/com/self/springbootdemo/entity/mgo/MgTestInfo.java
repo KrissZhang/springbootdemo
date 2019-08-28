@@ -1,4 +1,4 @@
-package com.self.springbootdemo.entity.po;
+package com.self.springbootdemo.entity.mgo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
