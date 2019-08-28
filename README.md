@@ -1,4 +1,4 @@
-# SpringBoot2.x + Mybatis + MySql + Redis + M + Aliyun + Geolite2 + Hutool + Swagger2 + Slf4j
+# SpringBoot2.x + Mybatis + MySql + Redis + MongoDb + Aliyun + Geolite2 + Hutool + Swagger2 + Slf4j
 
 
 # 已集成功能列表：
