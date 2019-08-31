@@ -1,5 +1,6 @@
 package com.self.springbootdemo.mq.dispatcher;
 
+import cn.hutool.json.JSONObject;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class MqDispatcher {
      * @param queueName 队列名称
      * @param obj 消息内容
      */
-    public void dispatchMsg(String queueName, Object obj){
+    public void dispatchMsg(String queueName, JSONObject obj){
         rabbitTemplate.convertAndSend(queueName, obj);
     }
 

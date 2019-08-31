@@ -1,5 +1,6 @@
 package com.self.springbootdemo.mq.receiver;
 
+import cn.hutool.json.JSONObject;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -17,7 +18,7 @@ public class MqReceiver {
      */
     @RabbitHandler
     @RabbitListener(queues = "queue1", containerFactory = "pointTaskContainerFactory")
-    public void queue1Receive(Object obj){
+    public void queue1Receive(JSONObject obj){
         System.out.println(obj.toString());
     }
 
@@ -27,7 +28,7 @@ public class MqReceiver {
      */
     @RabbitHandler
     @RabbitListener(queues = "queue2", containerFactory = "pointTaskContainerFactory")
-    public void queue2Receive(Object obj){
+    public void queue2Receive(JSONObject obj){
         System.out.println(obj.toString());
     }
 
