@@ -57,7 +57,7 @@ public class QuartzConfig {
         //指示触发任务
         tigger.setJobDetail(jobDetail);
 
-        //cron表达式，每1分钟执行一次
+        //cron表达式，每10秒钟执行一次
         tigger.setCronExpression("0/10 * * * * ?");
 
         //设置触发器名字
