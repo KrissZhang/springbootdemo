@@ -1,4 +1,4 @@
-# SpringBoot2.x + Mybatis + MySql + EhCache + Redis + MongoDb + RabbitMQ + Aliyun + Geolite2 + Hutool + Swagger2 + Slf4j
+# SpringBoot2.x + Mybatis + MySql + Quartz + EhCache + Redis + MongoDb + RabbitMQ + Aliyun + Geolite2 + Hutool + Swagger2 + Slf4j
 
 
 # 已集成功能列表：
@@ -15,7 +15,7 @@
 10. 邮件发送  
 11. 阿里短信通知
 12. ip定位
-13. 定时任务  
+13. Quartz定时任务  
 14. 线程池  
 15. Excel处理  
 16. Http操作  
