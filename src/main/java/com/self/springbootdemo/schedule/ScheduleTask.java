@@ -1,20 +1,18 @@
 package com.self.springbootdemo.schedule;
 
 import cn.hutool.core.date.DateTime;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * 定时任务
  * @author zp
  */
-@Component
+@Service
 public class ScheduleTask {
 
     /**
-     * 每5秒执行一次定时任务
+     * 定时任务业务逻辑
      */
-    @Scheduled(fixedRate = 5000)
     public void scheduleTask1(){
         System.out.println("现在时间：" + DateTime.now());
     }
