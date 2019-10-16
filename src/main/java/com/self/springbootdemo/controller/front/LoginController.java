@@ -1,7 +1,9 @@
 package com.self.springbootdemo.controller.front;
 
+import com.self.springbootdemo.constant.RespCodeMsg;
 import com.self.springbootdemo.service.LoginService;
 import com.self.springbootdemo.util.RpcClientResult;
+import com.self.springbootdemo.util.StringUtils;
 import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -59,6 +61,16 @@ public class LoginController {
     })
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public RpcClientResult login(HttpServletRequest request, HttpServletResponse response, @RequestParam String uname, @RequestParam String pwd){
+        //校验用户名是否为空
+        if(StringUtils.isBlank(uname)){
+            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
+        }
+
+        //校验密码是否为空
+        if(StringUtils.isBlank(pwd)){
+            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
+        }
+
         return service.login(request, response, uname, pwd);
     }
 

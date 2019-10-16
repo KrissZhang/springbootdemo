@@ -54,16 +54,6 @@ public class LoginServiceImpl implements LoginService {
      */
     @Override
     public RpcClientResult login(HttpServletRequest request, HttpServletResponse response, String uname, String pwd) {
-        //校验用户名是否为空
-        if(StringUtils.isBlank(uname)){
-            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
-        }
-
-        //校验密码是否为空
-        if(StringUtils.isBlank(pwd)){
-            return RpcClientResult.getFail(RespCodeMsg.PARAM_ERROR);
-        }
-
         //Md5加密密码
         String pwdMd5 = Md5.encodeByMD5(pwd.trim());
 
