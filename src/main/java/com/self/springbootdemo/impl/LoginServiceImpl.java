@@ -9,7 +9,6 @@ import com.self.springbootdemo.service.UserService;
 import com.self.springbootdemo.util.Md5;
 import com.self.springbootdemo.util.RedisUtil;
 import com.self.springbootdemo.util.RpcClientResult;
-import com.self.springbootdemo.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
