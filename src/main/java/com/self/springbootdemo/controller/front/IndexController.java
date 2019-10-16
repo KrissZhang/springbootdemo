@@ -28,8 +28,8 @@ public class IndexController {
     @ApiResponses(value = {
             @ApiResponse(code = 1000, message = "成功")
     })
-    @RequestMapping(value = "/testIndex", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public RpcClientResult testIndex(){
+    @RequestMapping(value = "/getTestIndex", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public RpcClientResult getTestIndex(){
         return service.testIndex();
     }
 

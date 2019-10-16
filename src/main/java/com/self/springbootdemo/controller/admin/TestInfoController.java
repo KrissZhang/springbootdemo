@@ -37,8 +37,8 @@ public class TestInfoController {
             @ApiResponse(code = 1002, message = "参数错误")
     })
     @SuppressWarnings("unchecked")
-    @RequestMapping(value = "/queryTestInfo", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public RpcClientResult<TestInfo> queryTestInfo(@RequestParam Integer id){
+    @RequestMapping(value = "/getTestInfo", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public RpcClientResult<TestInfo> getTestInfo(@RequestParam Integer id){
         return service.selectByPrimaryKey(id);
     }
 
